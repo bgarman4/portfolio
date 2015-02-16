@@ -6,6 +6,8 @@ var msnry = new Masonry( container, {
   gutter: 4
 });*/
 
+
+
 docReady( function() {
 
   var container = document.querySelector('.work-examples');
@@ -13,6 +15,11 @@ docReady( function() {
     columnWidth: 10,
     gutter: 4
   });
+  
+  // layout Masonry again after all images have loaded
+imagesLoaded( container, function() {
+  msnry.layout();
+});
 
   eventie.bind( container, 'click', function( event ) {
     // don't proceed if item was not clicked on
